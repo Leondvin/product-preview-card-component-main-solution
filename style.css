@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.woff2');
+    src: url('./product-preview-card-component-main/assets/fonts/Montserrat/Montserrat-VariableFont_wght.woff2');
     font-weight: 500 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Fraunces';
-    src: url('./assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff2');
+    src: url('./product-preview-card-component-main/assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff2');
     font-weight: 700;
     font-style: normal;
 }
@@ -120,7 +120,7 @@ button {
     gap: var(--spacing-8);
 }
 /* button p::before {
-    content: url("./assets/images/icon-cart.svg");
+    content: url("./product-preview-card-component-main/assets/images/icon-cart.svg");
     position: relative;
     left: calc(0px - var(--spacing-8));
     top: var(--spacing-2);
