@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-VariableFont_wght.woff2');
+    font-weight: 500 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Fraunces';
+    src: url('./assets/fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+:root {
+    --color-green-500: hsl(158, 36%, 37%);
+    --color-green-700: hsl(158, 42%, 18%);
+    --color-black: hsl(212, 21%, 14%);
+    --color-grey: hsl(228, 12%, 48%);
+    --color-cream: hsl(30, 38%, 92%);
+    --color-white: hsl(0, 0%, 100%);
+
+    --fluid: clamp(1rem, .75rem + 1vw, 1.25rem);
+    --clamp-p-body: calc(var(--fluid) * .875);
+    --clamp-p-new-price: calc(var(--fluid) * 2);
+    --clamp-p-old-price: calc(var(--fluid) * .75);
+    --clamp-h1: calc(var(--fluid) * 2);
+    --clamp-h2: calc(var(--fluid) * .75);
+    --clamp-button: calc(var(--fluid) * .875);
+
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+    --line-height-100: 1;
+    --line-height-155: 1.55;
+
+    --spacing-4: .25rem;
+    --spacing-8: .5rem;
+    --spacing-16: 1rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-48: 3rem;
+
+    font-weight: var(--font-weight-500);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    line-height: var(--line-height-155);
+    color: var(--color-grey);
+    background-color: var(--color-cream);
+    font-synthesis: none;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-size: var(--clamp-p-body);
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    display: grid;
+    place-items: center;
+}
+.card {
+    max-inline-size: 94vw;
+    max-inline-size: 94dvw;
+    block-size: auto;
+    border-radius: var(--spacing-8);
+    overflow: hidden;
+    margin-block: var(--spacing-48);
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, .2);
+}
+.product-image {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.text-section {
+    padding: var(--spacing-32);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+}
+.product-category {
+    text-transform: uppercase;
+    letter-spacing: var(--spacing-4);
+    font-size: var(--clamp-h2);
+    font-weight: var(--font-weight-500);
+    line-height: initial;
+}
+h1 {
+    font: var(--font-weight-700) var(--clamp-h1)/var(--line-height-100) 'Fraunces', serif;
+    color: var(--color-black);
+}
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-16);
+    line-height: var(--line-height-100);
+}
+.new-price {
+    font: var(--font-weight-700) var(--clamp-p-new-price) 'Fraunces', serif;
+    color: var(--color-green-500);
+}
+.old-price {
+    font-size: var(--clamp-p-old-price);
+    text-decoration: line-through;
+}
+button {
+    background-color: var(--color-green-500);
+    border: none;
+    border-radius: var(--spacing-8);
+    padding: var(--spacing-16);
+    color: var(--color-white);
+    font: var(--font-weight-700) var(--clamp-button) 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+/* button p::before {
+    content: url("./assets/images/icon-cart.svg");
+    position: relative;
+    left: calc(0px - var(--spacing-8));
+    top: var(--spacing-2);
+} */
+button:active {
+    background-color: var(--color-green-700);
+}
+@media only screen and (min-width: 37.5rem) {
+    .card {
+        flex-direction: row;
+    }
+    .product-image {
+        min-block-size: 100%;
+        inline-size: auto;
+    }
+    .img-section, .text-section {
+        flex: 1 1 50%;
+    }
+    .text-section {
+        justify-content: space-between;
+    }
+}
+@media only screen and (min-width: 50rem) {
+    .card {
+        max-inline-size: 47rem;
+    }
+}
+@media (hover: hover) {
+    button:hover {
+        background-color: var(--color-green-700);
+    }
+    button {
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+    }
+}
+/* .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: relative;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+} */
